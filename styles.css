@@ -6,8 +6,8 @@
         }
         /* Active state for project tabs */
         .tab-button.active {
-            border-color: #6366F1;
-            color: #6366F1;
+            border-color: #252526;
+            color: #d7d4d4;
             background-color: rgba(99, 102, 241, 0.1);
         }
         .section {
@@ -18,7 +18,7 @@
         }
         /* Background for the hero section with a dark overlay for text visibility */
         .hero-bg {
-            background-image: url('hero.png');
+            background-image: url('hero-port.PNG');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -33,6 +33,12 @@
             bottom: 0;
             background: rgba(10, 10, 10, 0.6); /* Dark overlay */
         }
+        /* New wrapper for each skill card and its name */
+        .skill-item-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         /* Style for individual skill cards */
         .skill-card {
             display: flex;
@@ -44,11 +50,19 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.2s ease-in-out;
+            padding: 1rem;
+            width: 100%; /* Ensure the card fills the wrapper */
         }
         .skill-card:hover {
             transform: translateY(-5px);
+        }
+        .skill-icon {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
         }
         /* New gradient for the contact button */
         .contact-button-gradient {
             background-image: linear-gradient(to right, #6366F1, #8B5CF6);
         }
+  
