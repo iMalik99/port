@@ -24,15 +24,7 @@
             background-attachment: fixed;
             position: relative;
         }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(10, 10, 10, 0.6); /* Dark overlay */
-        }
+       
         /* New wrapper for each skill card and its name */
         .skill-item-wrapper {
             display: flex;
