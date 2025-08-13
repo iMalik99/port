@@ -24,7 +24,12 @@
             background-attachment: fixed;
             position: relative;
         }
-       
+        /* Media Query for Mobile View*/
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
         /* New wrapper for each skill card and its name */
         .skill-item-wrapper {
             display: flex;
