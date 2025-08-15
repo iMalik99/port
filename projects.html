@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for Projects Section and Navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d12;
+            color: #f3f4f6;
+        }
+
+        /* Custom properties for a centralized color palette */
+        :root {
+            --primary-bg: #0d0d12;
+            --card-bg: #1a202c;
+            --text-white: #f3f4f6;
+            --text-gray-400: #a0aec0;
+            --blue-500: #4299e1;
+            --green-500: #48bb78;
+            --yellow-500: #ecc94b;
+            --purple-500: #9f7aea;
+        }
+
+        /* Navigation Menu styles */
+        .navbar {
+            background-color: rgba(13, 13, 18, 0.8);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Project Card styles */
+        .project-card {
+            border-radius: 1.5rem;
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .project-image {
+            border-radius: 1rem;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .view-project-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 2rem;
+            background-color: var(--blue-500);
+            color: var(--text-white);
+            font-weight: 700;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .view-project-btn:hover {
+            background-color: #3182ce;
+            transform: scale(1.05);
+        }
+        
+        /* New styles for a better look */
+        .tab-button.active {
+            border-color: #252526;
+            color: #d7d4d4;
+            background-color: rgba(99, 102, 241, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation Bar -->
+    <header class="bg-black/70 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-3xl font-extrabold text-white">IMM<span class="text-gray-600"> 𖣂</span></a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">About</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Services</a>
+                    <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <!-- Mobile menu icon (hamburger) -->
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/70 backdrop-blur-md">
+            <a href="index.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">Home</a>
+            <a href="#about" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">About</a>
+            <a href="services.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">Services</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-300 hover:bg-gray-900">Contact</a>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold tracking-tight text-gray-200">My Projects</h2>
+                <p class="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">A selection of my recent work.</p>
+            </div>
+            
+            <!-- Tab Buttons for Filtering Projects -->
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-12">
+                <button id="frontend-tab" class="tab-button active py-3 px-6 md:px-8 font-semibold text-lg border-b-2 border-transparent transition-all duration-300">Frontend</button>
+                <button id="data-tab" class="tab-button py-3 px-6 md:px-8 font-semibold text-lg border-b-2 border-transparent transition-all duration-300 text-gray-400 hover:text-white">Data Analysis</button>
+            </div>
+
+            <!-- Frontend Projects Sub-section -->
+            <div id="frontend-content" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Frontend Project 1 -->
+                    <div class="project-card">
+                        <img src="draxon.png" alt="Draxon Construction" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">Draxon Construction</h4>
+                        <p class="text-gray-400">A clean, professional industrial site that spotlights Draxon Construction’s precision-engineered services. From structural steel fabrication to maintenance and civil works, the layout emphasizes reliability, experience, and technology-driven execution.</p>
+                        <a href="https://imalik99.github.io/draxons/" class="view-project-btn">View Project</a>
+                    </div>
+                    <!-- Frontend Project 2 -->
+                    <div class="project-card">
+                        <img src="scorpion.PNG" alt="Scorpion Hotel" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">Scorpion Hotel</h4>
+                        <p class="text-gray-400">A luxury hospitality showcase set in the heart of Abuja. It combines elegant design with immersive copy to present rooms, amenities, and experiences; from spa treatments to infinity pools, in a way that feels both refined and inviting.</p>
+                        <a href="https://imalik99.github.io/scorpion/" class="view-project-btn">View Project</a>
+                    </div>
+                    <!-- Frontend Project 3 -->
+                    <div class="project-card">
+                        <img src="hhaven.png" alt="Hush & Haven Spa" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">Hush & Haven Spa</h4>
+                        <p class="text-gray-400">A serene and elegant wellness site that highlights spa treatments and self-care experiences, designed to capture the calm and rejuvenation clients can expect.</p>
+                        <a href="https://imalik99.github.io/hhaven/" class="view-project-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Analysis Projects Sub-section -->
+            <div id="data-content" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Data Analysis Project 1 -->
+                    <div class="project-card">
+                        <img src="furniture.png" alt="Furniture Sales Analysis" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">U.S. Furniture Sales Analysis</h4>
+                        <p class="text-gray-400">A comprehensive sales dashboard analyzing profit, shipping trends, and regional distribution across the U.S. It highlights key patterns such as peak sales months, top-performing categories, and delivery performance, helping uncover opportunities to improve logistics and revenue strategy.</p>
+                        <a href="https://1drv.ms/x/s!Ajjc3GeG2Ic3ghw9NmNVuAnO4a_w" class="view-project-btn">View Project</a>
+                    </div>
+                    <!-- Data Analysis Project 2 -->
+                    <div class="project-card">
+                        <img src="naija-car.png" alt="Nigerian-Cars-Overview" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">Nigerian Automobile Market Insights</h4>
+                        <p class="text-gray-400">An interactive dashboard providing deep insights into Nigeria’s automotive sector. It highlights average pricing, vehicle specifications, and regional distribution patterns, while uncovering consumer preferences across transmission types, popular brands, and color trends. Built with data from Cars45.com, the dashboard delivers actionable market intelligence for stakeholders and decision-makers.</p>
+                        <a href="https://1drv.ms/x/s!Ajjc3GeG2Ic3gh7SmZF_pP_SsnJA" class="view-project-btn">View Project</a>
+                    </div>
+                    <!-- Data Analysis Project 3 -->
+                    <div class="project-card">
+                        <img src="cafe-nova.png" alt="CaféNova Sales Performance Analysis" class="project-image">
+                        <h4 class="text-2xl font-bold mb-2">CaféNova Sales Performance Analysis</h4>
+                        <p class="text-gray-400">An interactive dashboard designed to track key restaurant sales metrics, including total revenue, top-selling items, and customer trends. It provides insights into category performance, weekday sales distribution, and year-over-year revenue growth for smarter decision-making.</p>
+                        <a href="https://1drv.ms/x/s!Ajjc3GeG2Ic3gh-q35_1Bm6_bXbL" class="view-project-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Get the button and the menu element
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Add a click event listener to the button
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle the 'hidden' class on the menu element
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab functionality for projects
+        const frontendTab = document.getElementById('frontend-tab');
+        const dataTab = document.getElementById('data-tab');
+        const frontendContent = document.getElementById('frontend-content');
+        const dataContent = document.getElementById('data-content');
+        const tabButtons = document.querySelectorAll('.tab-button');
+
+        // Function to show a specific tab and hide others
+        function showTab(tabId) {
+            // Hide all content sections
+            frontendContent.classList.add('hidden');
+            dataContent.classList.add('hidden');
+
+            // Deactivate all tab buttons
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+                button.classList.add('text-gray-400');
+                button.classList.remove('text-white');
+            });
+
+            // Show the selected content section
+            document.getElementById(tabId + '-content').classList.remove('hidden');
+
+            // Activate the selected tab button
+            document.getElementById(tabId + '-tab').classList.add('active', 'text-white');
+            document.getElementById(tabId + '-tab').classList.remove('text-gray-400');
+        }
+        
+        // Initially activate the frontend tab
+        showTab('frontend');
+
+        // Add click event listeners to the tab buttons
+        frontendTab.addEventListener('click', () => {
+            showTab('frontend');
+        });
+
+        dataTab.addEventListener('click', () => {
+            showTab('data');
+        });
+    </script>
+
+</body>
+</html>
