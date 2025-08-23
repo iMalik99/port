@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for a professional look and feel */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d12;
+            color: #f3f4f6;
+        }
+
+        /* Custom properties for a centralized color palette */
+        :root {
+            --primary-bg: #0d0d12;
+            --card-bg: #1a202c;
+            --text-white: #f3f4f6;
+            --text-gray-400: #a0aec0;
+            --blue-500: #4299e1;
+            --green-500: #48bb78;
+            --yellow-500: #ecc94b;
+            --purple-500: #9f7aea;
+        }
+
+        /* Navigation Menu styles */
+        .navbar {
+            background-color: rgba(13, 13, 18, 0.8);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .view-project-btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--blue-500);
+            color: var(--text-white);
+            font-weight: 700;
+            border-radius: 50px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .view-project-btn:hover {
+            transform: scale(1.05);
+            background-color: #3182ce;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navigation Bar -->
+    <header class="bg-black/70 backdrop-blur-md fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-3xl font-extrabold text-white">IMM<span class="text-gray-600"> 𖣂</span></a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Home</a>
+                    <a href="projects.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Projects</a>
+                    <a href="services.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Services</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-indigo-400 transition-colors duration-300">Contact</a>
+                </nav>
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <!-- Mobile menu icon (hamburger) -->
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/70 backdrop-blur-md">
+            <a href="index.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">Home</a>
+            <a href="projects.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">Projects</a>
+            <a href="services.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900 border-b border-gray-800">Services</a>
+            <a href="contact.html" class="block py-3 px-6 text-gray-300 hover:bg-gray-900">Contact</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-extrabold tracking-tight">About Me</h2>
+                <p class="text-gray-400 mt-4 text-lg max-w-2xl mx-auto">I’m a Data Analyst and Frontend Developer who thrives on turning raw data and bold ideas into meaningful, user-friendly solutions.</p>
+            </div>
+
+            <!-- Main Content -->
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+                <!-- Left Column: Professional Summary & Personal Touch -->
+                <div class="flex-1">
+                    <div class="bg-gray-800 p-8 md:p-12 rounded-3xl shadow-lg border border-gray-700">
+                        <h3 class="text-3xl font-bold mb-6">Who I Am</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                            I’m <strong class="text-white">Imam-Malik</strong>, a Data Analyst and Frontend Developer who thrives on transforming raw data into meaningful insights and building sleek, user-friendly applications that solve real problems. With expertise in data analysis, dashboards, and frontend development, I combine analytical thinking with technical creativity to deliver results that matter. My goal is simple: to use data and technology to make smarter decisions and create better user experiences.
+                        </p>
+                        
+                        <h3 class="text-3xl font-bold mb-6 mt-10">Beyond the Code</h3>
+                        <p class="text-gray-300 text-lg leading-relaxed">
+                            Outside of work, I’m a passionate football fan and enjoy playing chess, both of which sharpen my focus and strategy. I also love creating innovative side projects that challenge me to think differently and keep pushing my skills forward.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Call to Action -->
+                <div class="flex-1 flex flex-col justify-center">
+                    <div class="bg-gray-800 p-8 md:p-12 rounded-3xl shadow-lg border border-gray-700 h-full flex flex-col items-center justify-center text-center">
+                        <h3 class="text-3xl font-bold mb-6">Let's Connect</h3>
+                        <p class="text-gray-400 mb-8">Ready to start a new project or just want to chat? I'm always open to new opportunities.</p>
+                        
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full justify-center">
+                            <a href="#" class="view-project-btn bg-gray-900 hover:bg-gray-700 flex-1 text-center">Download My CV</a>
+                        </div>
+                        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 w-full justify-center">
+                            <a href="contact.html" class="view-project-btn bg-gray-900 hover:bg-gray-700 flex-1 text-center">Let's Work Together</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Get the button and the menu element
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        // Add a click event listener to the button
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle the 'hidden' class on the menu element
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
